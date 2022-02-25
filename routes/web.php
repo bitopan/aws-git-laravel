@@ -11,6 +11,13 @@
 |
 */
 
+Route::get('clear', function () {
+    \Artisan::call("cache:clear");
+    \Artisan::call("config:clear");
+        echo "Cache Clear!<br/>";
+    echo phpinfo();
+});
+
 Route::get('/', function () {
     return view('welcome');
 });
