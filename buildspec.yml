@@ -10,11 +10,9 @@ phases:
     commands:
       - php -v
       - which php
-      - sudo php -d memory_limit=-1 /usr/bin/composer.phar install --no-dev --no-interaction --prefer-dist --optimize-autoloader
+      - composer install --no-interaction
   build:
     commands:
-      - rm composer.json
-      - rm composer.lock
   post_build:
     commands:
       - echo Build completed on `date`
