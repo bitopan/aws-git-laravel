@@ -10,7 +10,6 @@ phases:
     commands:
       - php -v
       - which php
-      - composer install --no-interaction
   build:
     commands:
   post_build:
