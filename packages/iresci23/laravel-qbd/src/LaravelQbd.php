@@ -25,15 +25,15 @@ class LaravelQbd
 
     public function connect(){
 
-    	//date_default_timezone_set($this->config['qb_timezone']);
+    	date_default_timezone_set($this->config['qb_timezone']);
     	// error_reporting(E_ALL | E_STRICT);
 
     	if(!$this->config['qb_dsn']){
     		$dbconf 	= config('database');
     		$db 	=  $dbconf['connections'][$dbconf['default']];
-    		// if($db['driver'] == 'mysql'){
-    		// 	$db['driver'] = 'mysqli';
-    		// }
+    		if($db['driver'] == 'mysql'){
+    			$db['driver'] = 'mysqli';
+    		}
     		$this->dsn = $db['driver'] . '://' . $db['username'] . ':' .$db['password'] . '@' . $db['host'] . ':' . $db['port'] .'/'. $db['database'];
     	}
 
