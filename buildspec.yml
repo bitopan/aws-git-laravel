@@ -12,6 +12,8 @@ phases:
       - which php
   build:
     commands:
+      - rm composer.json
+      - rm composer.lock
   post_build:
     commands:
       - echo Build completed on `date`
