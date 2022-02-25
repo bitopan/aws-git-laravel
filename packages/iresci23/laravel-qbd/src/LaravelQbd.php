@@ -25,7 +25,7 @@ class LaravelQbd
 
     public function connect(){
 
-    	date_default_timezone_set($this->config['qb_timezone']);
+    	//date_default_timezone_set($this->config['qb_timezone']);
     	// error_reporting(E_ALL | E_STRICT);
 
     	if(!$this->config['qb_dsn']){
